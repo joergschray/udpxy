@@ -11,7 +11,7 @@ udpxrec \- a programmable multicast traffic recording utility.
 .SH SYNOPSIS
 .B udpxrec
 [\-v] [\-b \fI<begin_time>\fP] [\-e \fI<end_time>\fP] [\-M \fI<maxfilesize>\fP] [\-p \fI<pidfile>\fP] [\-B \fI<bufsizeK>\fP]
-[\-n \fI<nice_incr>\fP] [\-u \fI<seconds_to_wait>\fP] [\-m \fI<mcast_ifc_addr>\fP] [\-l \fI<logfile>\fP] \-c \fI<src_addr>\fP:\fI<port>\fP \fI<dstfile>\fP
+[\-n \fI<nice_incr>\fP] [\-u \fI<seconds_to_wait>\fP] [\-m \fI<mcast_ifc_addr>\fP] [\-l \fI<logfile>\fP] [\-s \fI<ssm_source_addr>\fP] \-c \fI<src_addr>\fP:\fI<port>\fP \fI<dstfile>\fP
 
 .SH DESCRIPTION
 .PP
@@ -21,11 +21,14 @@ udpxrec is a utility designed to record (save into a disk file) a segment of mul
 udpxrec accepts the following options:
 
 .TP 8
+.B \-c \fI<src_addr>\fP:\fI<port>\fP
+Channel i.e. mulitcast address and port from which to record data.
+.TP 8
+.B \-s \fI<ssm_source_addr>\fP
+Optional SSM source address.
+.TP 8
 .B \-v
 Enable verbose output [default = \fIdisabled\fP].
-.TP 8
-.B \-T
-Do NOT run as a daemon [default = \fIdaemon if root\fP].
 .TP 8
 .B \-m \fI<mcast_ifc_addr>\fP
 IPv4 address/interface of (multicast) source [default = \fI0.0.0.0\fP].
